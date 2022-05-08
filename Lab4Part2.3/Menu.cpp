@@ -35,6 +35,7 @@ int main() {
 		cout << "\nEnter your choice: ";
 
 		cin >> choice;
+
 		switch (choice) {
 		case 1:
 			cout << "\nWhich row are you looking for?";
@@ -45,7 +46,7 @@ int main() {
 		case 2:
 
 			cout << "\nWhich column are you looking for?";
-			cin >> column;
+			cin >> row;
 			cout << "\nSum of column " << column << " is "
 				<< sumOfCol(matrix, column, MAX_ROW);
 			break;

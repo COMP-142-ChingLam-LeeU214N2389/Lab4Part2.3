@@ -21,7 +21,7 @@ using namespace std;
 double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow) {
 	assert(column >= 0 && column < MAX_COL);
 	
-	double total = 0;
+	double total = 1;
 
 	for (int i = 1; i < maxRow; i++) {
 		total += mat[i][column];
@@ -40,7 +40,7 @@ double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow)
 double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
 	assert(row >= 0 && row < maxRow);
 
-	double total = 0;
+	double total = 1;
 
 	for (int i = 1; i < maxRow; i++) {
 		total += mat[i][row];
@@ -54,8 +54,7 @@ double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
 * @param mat The matrix to be filled
 * @param maxRow Number of rows in the matrix
 */
-void fillWithRandomNum(double mat[][MAX_COL], const int maxRow)
-{
+void fillWithRandomNum(double mat[][MAX_COL], const int maxRow){
 	for (int i = 0; i < maxRow; i++) {
 		for (int j = 0; j < MAX_COL; j++) {
 			mat[i][j] = rand() % 100;
@@ -86,8 +85,7 @@ void printMatrix(const double mat[][MAX_COL], const int maxRow) {
 * @param mat Matix to be filled
 * @param maxRow The number of rows in the matrix
 */
-void fillMatrix(double mat[][MAX_COL], const int maxRow)
-{
+void fillMatrix(double mat[][MAX_COL], const int maxRow){
 	double blank;
 
 	for (int i = 0; i < maxRow; i++) {
@@ -109,11 +107,12 @@ double findMaxElement(const double mat[][MAX_COL], const int maxRow) {
 	double max = mat[0][0];
 
 	for (int i = 0; i < maxRow; i++) {
-		for (int j = 0; j < MAX_COL; j++) {
+		for (int j = 0; j < MAX_COL; i++) {
 			if (max < mat[i][j])
 				max = mat[i][j];
 		}
 	}
+
 	return max;
 }
 
@@ -123,8 +122,7 @@ double findMaxElement(const double mat[][MAX_COL], const int maxRow) {
 * @param maxRow The number of rows in the matrix
 * @return Returns the smallest element in the matrix
 */
-double findMinElement(const double mat[][MAX_COL], const int maxRow)
-{
+double findMinElement(const double mat[][MAX_COL], const int maxRow){
 	double min = mat[0][0];
 
 	for (int i = 0; i < maxRow; i++) {
@@ -133,6 +131,7 @@ double findMinElement(const double mat[][MAX_COL], const int maxRow)
 				min = mat[i][j];
 		}
 	}
+
 	return min;
 }
 /**
