@@ -35,47 +35,58 @@ int main() {
 		cout << "\nEnter your choice: ";
 
 		cin >> choice;
-		if (1 == choice) {
+		switch (choice) {
+		case 1:
 			cout << "\nWhich row are you looking for?";
 			cin >> row;
 			cout << "\nSum of row " << row << " is "
 				<< sumOfRow(matrix, row, MAX_ROW);
-		}
-		if (2 == choice) {
+			break;
+		case 2:
+
 			cout << "\nWhich column are you looking for?";
 			cin >> column;
 			cout << "\nSum of column " << column << " is "
 				<< sumOfCol(matrix, column, MAX_ROW);
-		}
-		if (choice == 3) {
+			break;
+
+		case 3:
 			cout << "\nNumber between 1 and 100 is now assigned randomly to the elements of the matrix";
 			fillWithRandomNum(matrix, MAX_ROW);
 			cout << endl;
-		}
-		if (4 == choice) {
+			break;
+		case 4:
 			printMatrix(matrix, MAX_ROW);
-		}
-		if (5 == choice) {
+			break;
+		case 5:
 			fillMatrix(matrix, MAX_ROW);
-		}
-		if (6 == choice) {
+			break;
+		case 6:
 			cout << "\nThe smallest element is "
 				<< findMinElement(matrix, MAX_ROW) << endl;
-		}
-		if (7 == choice) {
+			break;
+		case 7:
 			cout << "\nThe largest element is "
 				<< findMaxElement(matrix, MAX_ROW) << endl;
-		}
-		if (8 == choice) {
-			cout << "\nMAX_ROW is " << MAX_ROW;
-			cout << "\nMAX_COL is " << MAX_COL;
+			break;
+		case 8:
+			//cout << "\nMAX_ROW is " << MAX_ROW;
+			//cout << "\nMAX_COL is " << MAX_COL;
 			if (isSquare(matrix, MAX_ROW))
 				cout << "\nYes, it is a square matrix" << endl;
 			else
 				cout << "\nNo, it is not a square matrix" << endl;
+			break;
+		case 9:
+			//no code needed
+			break;
+		default:
+			cerr << "\nWrong choice!";
+			break;
 		}
-
 	} while (9 != choice);
+	
+	cout << "\nHave a nice day!!";
 	
 	return 0;
 }
