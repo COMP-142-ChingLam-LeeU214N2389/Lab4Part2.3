@@ -152,6 +152,11 @@ void printMatrix(const double mat[][MAX_COL], const int maxRow) {
 	}
 }
 
+/**
+* Let the user fill in the matrix
+* @param mat Matix to be filled
+* @param maxRow The number of rows in the matrix
+*/
 void fillMatrix(double mat[][MAX_COL], const int maxRow)
 {
 	double blank;
@@ -165,6 +170,12 @@ void fillMatrix(double mat[][MAX_COL], const int maxRow)
 	}
 }
 
+/**
+* Find the largest element in the matrix
+* @param mat The matix checking 
+* @param maxRow The number of rows in the matrix
+* @return Returns the largest element in the matrix
+*/
 double findMaxElement(const double mat[][MAX_COL], const int maxRow) {
 	double max = mat[0][0];
 
@@ -177,6 +188,12 @@ double findMaxElement(const double mat[][MAX_COL], const int maxRow) {
 	return max;
 }
 
+/**
+* Find the smallest element in the matrix
+* @param mat The matix checking
+* @param maxRow The number of rows in the matrix
+* @return Returns the smallest element in the matrix
+*/
 double findMinElement(const double mat[][MAX_COL], const int maxRow)
 {
 	double min = mat[0][0];
@@ -189,7 +206,12 @@ double findMinElement(const double mat[][MAX_COL], const int maxRow)
 	}
 	return min;
 }
-
+/**
+* Check if the matrix is a square matrix
+* @param mat The matix checking
+* @param maxRow The number of rows in the matrix
+* @return Retuns true if the matrix is a square matrix
+*/
 bool isSquare(const double mat[][MAX_COL], const int maxRow) {
 	bool postiive = false;
 
