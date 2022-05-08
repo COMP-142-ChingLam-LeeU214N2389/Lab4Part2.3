@@ -1,7 +1,7 @@
 /** \file Lab2Part2.3.cpp
 * \brief Small matris program
 * \author Ching Lam Lee
-* \date 5\8\2022
+* \date 5/8/2022
 */
 
 #include <iostream> 

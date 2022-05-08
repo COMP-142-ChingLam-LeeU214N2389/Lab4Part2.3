@@ -3,41 +3,49 @@
 * \details Function including in the options
 * \author Ching Lam Lee
 * \date 5/8/2022
-*
 */
 
 #include <iostream> 
 #include <cstdlib>
+#include<cassert>
 #include"Options.h"
 using namespace std;
 
 /**
-* sum of the columns
-* @param mat The matix
+* Sum of the selected columns
+* @param mat The matirx stored in the program
 * @param column The column chosen by the user
 * @param maxRow The number of rows is in the matrix
 * @return Retuns sum of the column cosen by the user
 */
 double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow) {
+	assert(column >= 0 && column < MAX_COL);
+	
 	double total = 0;
+
 	for (int i = 1; i < maxRow; i++) {
 		total += mat[i][column];
 	}
+
 	return total;
 }
 
 /**
-* sum of the rows
-* @param mat The matix
+* Sum of the selected rows
+* @param mat The matrix stored in the program
 * @param row The row chosen by the user
 * @param maxRow The number of rows in the matrix
 * @return Retuns sum of the row chosen by the user
 */
 double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
+	assert(row >= 0 && row < maxRow);
+
 	double total = 0;
+
 	for (int i = 1; i < maxRow; i++) {
 		total += mat[i][row];
 	}
+
 	return total;
 }
 
@@ -93,7 +101,7 @@ void fillMatrix(double mat[][MAX_COL], const int maxRow)
 
 /**
 * Find the largest element in the matrix
-* @param mat The matix checking
+* @param mat The matix to be checked
 * @param maxRow The number of rows in the matrix
 * @return Returns the largest element in the matrix
 */
@@ -111,7 +119,7 @@ double findMaxElement(const double mat[][MAX_COL], const int maxRow) {
 
 /**
 * Find the smallest element in the matrix
-* @param mat The matix checking
+* @param mat The matrix to be checked
 * @param maxRow The number of rows in the matrix
 * @return Returns the smallest element in the matrix
 */
