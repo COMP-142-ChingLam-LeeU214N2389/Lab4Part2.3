@@ -21,7 +21,7 @@ using namespace std;
 double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow) {
 	assert(column >= 0 && column < MAX_COL);
 	
-	double total = 1;
+	double total = 0;
 
 	for (int i = 1; i < maxRow; i++) {
 		total += mat[i][column];
@@ -40,7 +40,7 @@ double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow)
 double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
 	assert(row >= 0 && row < maxRow);
 
-	double total = 1;
+	double total = 0;
 
 	for (int i = 1; i < maxRow; i++) {
 		total += mat[i][row];
@@ -107,7 +107,7 @@ double findMaxElement(const double mat[][MAX_COL], const int maxRow) {
 	double max = mat[0][0];
 
 	for (int i = 0; i < maxRow; i++) {
-		for (int j = 0; j < MAX_COL; i++) {
+		for (int j = 0; j < MAX_COL; j++) {
 			if (max < mat[i][j])
 				max = mat[i][j];
 		}

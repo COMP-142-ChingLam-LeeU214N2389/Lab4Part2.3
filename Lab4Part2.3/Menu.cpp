@@ -46,7 +46,7 @@ int main() {
 		case 2:
 
 			cout << "\nWhich column are you looking for?";
-			cin >> row;
+			cin >> column;
 			cout << "\nSum of column " << column << " is "
 				<< sumOfCol(matrix, column, MAX_ROW);
 			break;
