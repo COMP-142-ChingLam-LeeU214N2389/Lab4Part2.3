@@ -1,6 +1,6 @@
 /** file Options.h
 * \brief Library to the menu
-* \details function prototypes of the function 
+* \details Including function prototypes of the function 
 * \author Ching Lam Lee
 * \date 5/8/2022
 */

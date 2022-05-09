@@ -140,7 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Options.cpp" />
-    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="LabPart2.3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Options.h" />
