@@ -22,8 +22,9 @@ double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow)
 	assert(column >= 0 && column < MAX_COL);
 	
 	double total = 0;
+	int i;
 
-	for (int i = 1; i < maxRow; i++) {
+	for (i = 1; i < maxRow; i++) {
 		total += mat[i][column];
 	}
 
@@ -41,10 +42,13 @@ double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
 	assert(row >= 0 && row < maxRow);
 
 	double total = 0;
+	int i;
 
-	for (int i = 1; i < maxRow; i++) {
-		total += mat[i][row];
+	for (i = 1; i < MAX_COL; i++) {
+		total += mat[row][i];
 	}
+
+	assert(i == maxRow);
 
 	return total;
 }
@@ -55,6 +59,8 @@ double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
 * @param maxRow Number of rows in the matrix
 */
 void fillWithRandomNum(double mat[][MAX_COL], const int maxRow){
+	assert(maxRow > 0);
+	
 	for (int i = 0; i < maxRow; i++) {
 		for (int j = 0; j < MAX_COL; j++) {
 			mat[i][j] = rand() % 100;
@@ -68,6 +74,8 @@ void fillWithRandomNum(double mat[][MAX_COL], const int maxRow){
 * @param maxRow Number of rows in the matrix
 */
 void printMatrix(const double mat[][MAX_COL], const int maxRow) {
+	assert(maxRow > 0);
+	
 	for (int i = 0; i < maxRow; i++) {
 		cout << "\n[";
 		for (int j = 0; j < MAX_COL; j++) {
@@ -86,6 +94,8 @@ void printMatrix(const double mat[][MAX_COL], const int maxRow) {
 * @param maxRow The number of rows in the matrix
 */
 void fillMatrix(double mat[][MAX_COL], const int maxRow){
+	assert(maxRow > 0);
+
 	double blank;
 
 	for (int i = 0; i < maxRow; i++) {
@@ -104,14 +114,20 @@ void fillMatrix(double mat[][MAX_COL], const int maxRow){
 * @return Returns the largest element in the matrix
 */
 double findMaxElement(const double mat[][MAX_COL], const int maxRow) {
-	double max = mat[0][0];
+	assert(maxRow > 0);
 
-	for (int i = 0; i < maxRow; i++) {
-		for (int j = 0; j < MAX_COL; j++) {
+	double max = mat[0][0];
+	int i, j;
+
+	for ( i = 0; i < maxRow; i++) {
+		for ( j = 0; j < MAX_COL; j++) {
 			if (max < mat[i][j])
 				max = mat[i][j];
 		}
 	}
+	
+	assert(j == MAX_COL);
+	assert(i == maxRow);
 
 	return max;
 }
@@ -123,14 +139,20 @@ double findMaxElement(const double mat[][MAX_COL], const int maxRow) {
 * @return Returns the smallest element in the matrix
 */
 double findMinElement(const double mat[][MAX_COL], const int maxRow){
+	assert(maxRow > 0);
+	
 	double min = mat[0][0];
+	int i, j;
 
-	for (int i = 0; i < maxRow; i++) {
-		for (int j = 0; j < MAX_COL; j++) {
+	for (i = 0; i < maxRow; i++) {
+		for (j = 0; j < MAX_COL; j++) {
 			if (min > mat[i][j])
 				min = mat[i][j];
 		}
 	}
+
+	assert(j == MAX_COL);
+	assert(i == maxRow);
 
 	return min;
 }
@@ -141,6 +163,8 @@ double findMinElement(const double mat[][MAX_COL], const int maxRow){
 * @return Retuns true if the matrix is a square matrix
 */
 bool isSquare(const double mat[][MAX_COL], const int maxRow) {
+	assert(maxRow > 0);
+	
 	bool postiive = false;
 
 	if (MAX_COL == maxRow)
