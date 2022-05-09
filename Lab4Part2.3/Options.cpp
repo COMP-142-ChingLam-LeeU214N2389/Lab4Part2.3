@@ -28,6 +28,8 @@ double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow)
 		total += mat[i][column];
 	}
 
+	assert(i==maxRow);
+
 	return total;
 }
 
@@ -48,7 +50,7 @@ double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
 		total += mat[row][i];
 	}
 
-	assert(i == maxRow);
+	assert(i == MAX_COL);
 
 	return total;
 }
