@@ -37,6 +37,10 @@ double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow)
 * @param maxRow The number of rows in the matrix
 * @return Retuns sum of the row chosen by the user
 */
+/*Returns an array of MAX_ROW where each element is the sum of that specific row. 
+The array you declares are dynamically allocated (using the keyword new), hence 
+you must remember to reclaim that memory in the calling function (using the 
+keyword delete).*/
 double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
 	assert(row >= 0 && row < maxRow);
 

@@ -11,8 +11,8 @@
 const int MAX_COL = 2;
 
 //function prototypes
-double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow);
-double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow);
+double* sumOfRows(const double mat[][MAX_COL], const int maxRow);
+double* sumOfCols(const double mat[][MAX_COL], const int maxRow);
 void fillWithRandomNum(double mat[][MAX_COL], const int maxRow);
 void printMatrix(const double mat[][MAX_COL], const int maxRow);
 void fillMatrix(double mat[][MAX_COL], const int maxRow);
