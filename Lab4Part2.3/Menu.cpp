@@ -42,7 +42,7 @@ int main() {
 				cout << "\nWhich row are you looking for?";
 				cin >> row;
 				cout << "\nSum of row " << row << " is "
-					<< sumOfRow(matrix, row, MAX_ROW);
+					<< sumOfRows(matrix, MAX_ROW);
 			} while (row<0 || row>MAX_ROW);
 			break;
 		case 2:
@@ -50,7 +50,7 @@ int main() {
 				cout << "\nWhich column are you looking for?";
 				cin >> column;
 				cout << "\nSum of column " << column << " is "
-					<< sumOfCol(matrix, column, MAX_ROW);
+					<< sumOfCols(matrix, MAX_ROW);
 			} while (column<0 || column>MAX_COL);
 			break;
 

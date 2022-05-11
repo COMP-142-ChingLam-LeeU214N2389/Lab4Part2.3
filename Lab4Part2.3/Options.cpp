@@ -23,7 +23,7 @@ double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow)
 	
 	double total = 0;
 
-	for (int i = 1; i < maxRow; i++) {
+	for (int i = 0; i < maxRow; i++) {
 		total += mat[i][column];
 	}
 
@@ -41,13 +41,22 @@ double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow)
 The array you declares are dynamically allocated (using the keyword new), hence 
 you must remember to reclaim that memory in the calling function (using the 
 keyword delete).*/
-double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
-	assert(row >= 0 && row < maxRow);
+double* sumOfRows(const double mat[][MAX_COL], const int maxRow){
 
-	double total = 0;
+	double* total=new double[maxRow];
+	
+	int i;
+	while(i<maxRow){
+		total[i] = mat[i][0];
+	//for (int i = 0; i < maxRow; i++) {
+		//total[i]=mat[i][0];
 
-	for (int i = 1; i < maxRow; i++) {
-		total += mat[i][row];
+		//for (int j = 0; j < maxRow; j++) {
+			//if (j == 0)
+				//*total = mat[i][j];
+			//else
+				//*total += mat[i][j];
+		//}
 	}
 
 	return total;
