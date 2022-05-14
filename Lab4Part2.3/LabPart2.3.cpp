@@ -100,23 +100,23 @@ int main() {
 			}
 			break;
 		case 10:
-			double* pSum;
-			int i;
+			double* pSumCol;
+			
 
-			pSum = sumOfCols(matrix, MAX_ROW);
+			pSumCol = sumOfCols(matrix, MAX_ROW);
 
 			for (i = 0; i < MAX_COL; i++) {
 				cout << "\nSum of column " << i << " is "
-					<< *(pSum + i);
+					<< *(pSumCol + i);
 			}
 
 			cout << "\nThe array sum is" << ":\n[";
 
 			for (i = 0; i < MAX_COL; i++) {
 				if (i != MAX_COL - 1)
-					cout << *(pSum + i) << ",";
+					cout << *(pSumCol + i) << ",";
 				else
-					cout << *(pSum + i) << ']';
+					cout << *(pSumCol + i) << ']';
 			}
 			break;
 		case 11:
