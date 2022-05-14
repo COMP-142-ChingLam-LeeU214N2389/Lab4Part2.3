@@ -42,8 +42,8 @@ double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
 
 	double total = 0;
 
-	for (int i = 0; i < maxRow; i++) {
-		total += mat[i][row];
+	for (int i = 0; i < MAX_COL; i++) {
+		total += mat[row][i];
 	}
 
 	return total;
