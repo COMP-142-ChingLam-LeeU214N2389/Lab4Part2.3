@@ -19,6 +19,8 @@ void fillMatrix(double mat[][MAX_COL], const int maxRow);
 double findMaxElement(const double mat[][MAX_COL], const int maxRow);
 double findMinElement(const double mat[][MAX_COL], const int maxRow);
 bool isSquare(const double mat[][MAX_COL], const int maxRow);
+double* sumOfRows(const double mat[][MAX_COL], const int maxRow);
+double* sumOfCols(const double mat[][MAX_COL], const int maxRow);
 
 #endif
 

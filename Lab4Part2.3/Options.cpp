@@ -182,3 +182,23 @@ bool isSquare(const double mat[][MAX_COL], const int maxRow) {
 
 	return postiive;
 }
+
+/**
+* Function<code>sumOfCols</code> returns sum of each column stored in the matrix at once through pointer
+* 
+* @param mat	the matrix to be calculated
+* @param maxRow	the number of rows in the matrix
+* @return		returns an array which stored sum of each column 
+*/
+double* sumOfCols(const double mat[][MAX_COL], const int maxRow) {
+	int i, j;
+
+	double* sum = new[MAX_COL];
+
+	for (i = 0; i < MAX_COL; i++) {
+		sum[i] = 0;
+		for (j = 0; j < maxRow; j++) {
+			sum[i}+=mat[i][j];
+	}
+	return sum;
+}

@@ -31,7 +31,9 @@ int main() {
 			<< "\n6. Fill maximum element"
 			<< "\n7. Find minimum element"
 			<< "\n8. Is it a square matrix?"
-			<< "\n9. Exit";
+			<< "\n9. Sum of all row in once"
+			<< "\n10. Sum of all column in once"
+			<< "\n11. Exit";
 
 		cout << "\nEnter your choice: ";
 
@@ -77,14 +79,25 @@ int main() {
 			else
 				cout << "\nNo, it is not a square matrix" << endl;
 			break;
-		case 9:
+		case 9: 
+			break;
+		case 10:
+			int pSum, i;
+
+			pSum = sumOfCols(matrix, MAX_ROW);
+
+			for (i = 0; i < MAX_COL; i++) {
+				cout << "\nSum of column " << i << " is "
+					<< pSum[i];
+			}
+		case 11:
 			//no code needed
 			break;
 		default:
 			cerr << "\nWrong choice!";
 			break;
 		}
-	} while (9 != choice);
+	} while (11 != choice);
 	
 	cout << "\nHave a nice day!!";
 	
