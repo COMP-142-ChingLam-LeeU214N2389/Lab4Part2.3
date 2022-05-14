@@ -80,16 +80,45 @@ int main() {
 				cout << "\nNo, it is not a square matrix" << endl;
 			break;
 		case 9: 
+			double* pSum;
+			int i;
+
+			pSum = sumOfRows(matrix, MAX_ROW);
+
+			for (i = 0; i < MAX_ROW; i++) {
+				cout << "\nSum of row " << i << " is "
+					<< *(pSum + i);
+			}
+
+			cout << "\nThe array sum is" << ":\n[";
+
+			for (i = 0; i < MAX_ROW; i++) {
+				if (i != MAX_ROW - 1)
+					cout << *(pSum + i) << ",";
+				else
+					cout << *(pSum + i) << ']';
+			}
 			break;
 		case 10:
-			int pSum, i;
+			double* pSum;
+			int i;
 
 			pSum = sumOfCols(matrix, MAX_ROW);
 
 			for (i = 0; i < MAX_COL; i++) {
 				cout << "\nSum of column " << i << " is "
-					<< pSum[i];
+					<< *(pSum + i);
 			}
+
+			cout << "\nThe array sum is" << ":\n[";
+
+			for (i = 0; i < MAX_COL; i++) {
+				if (i != MAX_COL - 1)
+					cout << *(pSum + i) << ",";
+				else
+					cout << *(pSum + i) << ']';
+			}
+			break;
 		case 11:
 			//no code needed
 			break;
