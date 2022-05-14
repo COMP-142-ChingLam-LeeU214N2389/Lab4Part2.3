@@ -79,7 +79,7 @@ int main() {
 			else
 				cout << "\nNo, it is not a square matrix" << endl;
 			break;
-		case 9: 
+		case 9:
 			double* pSum;
 			int i;
 
