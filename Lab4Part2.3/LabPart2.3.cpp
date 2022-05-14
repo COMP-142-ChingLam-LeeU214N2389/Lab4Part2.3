@@ -1,5 +1,6 @@
 /** \file Lab2Part2.3.cpp
-* \brief Small matris program
+* \brief Small matrix program
+* \details Showing the menu to the users
 * \author Ching Lam Lee
 * \date 5/8/2022
 */
@@ -10,8 +11,8 @@
 using namespace std;
 
 /**
-* Present the menu to the user with the valid options
-* @return Returns 0
+* presents the menu to the user with the valid options
+* @return  returns 0
 */
 int main() {
 	srand(static_cast<unsigned int>(time(NULL)));
@@ -74,8 +75,6 @@ int main() {
 				<< findMaxElement(matrix, MAX_ROW) << endl;
 			break;
 		case 8:
-			//cout << "\nMAX_ROW is " << MAX_ROW;
-			//cout << "\nMAX_COL is " << MAX_COL;
 			if (isSquare(matrix, MAX_ROW))
 				cout << "\nYes, it is a square matrix" << endl;
 			else

@@ -1,6 +1,6 @@
 /** \file Options.cpp
 * \brief Library to the menu of a small matrix program
-* \details Function including in the options
+* \details Incuding code of the functions runing in the menu
 * \author Ching Lam Lee
 * \date 5/8/2022
 */
@@ -12,49 +12,60 @@
 using namespace std;
 
 /**
-* Sum of the selected columns
-* @param mat The matirx stored in the program
-* @param column The column chosen by the user
-* @param maxRow The number of rows is in the matrix
-* @return Retuns sum of the column cosen by the user
+* Function <code>sumOfCol</code> returns the sum of the selected columns
+* 
+* @param mat		the matirx stored in the program
+* @param column		the column chosen by the user
+* @param maxRow		number of rows in the matrix
+* @return			returns the sum of column chosen by the user
 */
 double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow) {
 	assert(column >= 0 && column < MAX_COL);
 	
 	double total = 0;
+	int i;
 
 	for (int i = 0; i < maxRow; i++) {
 		total += mat[i][column];
 	}
 
+	assert(i==maxRow);
+
 	return total;
 }
 
 /**
-* Sum of the selected rows
-* @param mat The matrix stored in the program
-* @param row The row chosen by the user
-* @param maxRow The number of rows in the matrix
-* @return Retuns sum of the row chosen by the user
+* Function <code>sumOfRow</code> returns the sum of the selected rows
+* 
+* @param mat		the matrix stored in the program
+* @param row		the row chosen by the user
+* @param maxRow		the number of rows in the matrix
+* @return			returns sum of the row chosen by the user
 */
 double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
 	assert(row >= 0 && row < maxRow);
 
 	double total = 0;
+	int i;
 
 	for (int i = 0; i < MAX_COL; i++) {
 		total += mat[row][i];
 	}
 
+	assert(i == MAX_COL);
+
 	return total;
 }
 
 /**
-* Fill the elemetns of the matrix randomly between 1 and 100
-* @param mat The matrix to be filled
-* @param maxRow Number of rows in the matrix
+* Function <code>fillWithRandomNUm</code> fills the elements of the matrix randomly between 1 and 100
+* 
+* @param mat	the matrix to be filled
+* @param maxRow	number of rows in the matrix
 */
 void fillWithRandomNum(double mat[][MAX_COL], const int maxRow){
+	assert(maxRow > 0);
+	
 	for (int i = 0; i < maxRow; i++) {
 		for (int j = 0; j < MAX_COL; j++) {
 			mat[i][j] = rand() % 100;
@@ -63,11 +74,14 @@ void fillWithRandomNum(double mat[][MAX_COL], const int maxRow){
 }
 
 /**
-* Print the matrix
-* @param mat The matrix to be printed
-* @param maxRow Number of rows in the matrix
+* Function <code>printMatirx</code> prints the matrix
+* 
+* @param mat	the matrix to be printed
+* @param maxRow number of rows in the matrix
 */
 void printMatrix(const double mat[][MAX_COL], const int maxRow) {
+	assert(maxRow > 0);
+	
 	for (int i = 0; i < maxRow; i++) {
 		cout << "\n[";
 		for (int j = 0; j < MAX_COL; j++) {
@@ -81,11 +95,14 @@ void printMatrix(const double mat[][MAX_COL], const int maxRow) {
 }
 
 /**
-* Let the user fill in the matrix
-* @param mat Matix to be filled
-* @param maxRow The number of rows in the matrix
+* Function <code>fillMatrix</code> Let the user fill in the matrix
+* 
+* @param mat		matix to be filled
+* @param maxRow		the number of rows in the matrix
 */
 void fillMatrix(double mat[][MAX_COL], const int maxRow){
+	assert(maxRow > 0);
+
 	double blank;
 
 	for (int i = 0; i < maxRow; i++) {
@@ -98,49 +115,66 @@ void fillMatrix(double mat[][MAX_COL], const int maxRow){
 }
 
 /**
-* Find the largest element in the matrix
-* @param mat The matix to be checked
-* @param maxRow The number of rows in the matrix
-* @return Returns the largest element in the matrix
+* Function <code>findMaxElement</code> finds the largest element in the matrix. Returns the largest element in the matrix
+* 
+* @param mat		the matix to be checked
+* @param maxRow		the number of rows in the matrix
+* @return			returns the largest element in the matrix
 */
 double findMaxElement(const double mat[][MAX_COL], const int maxRow) {
-	double max = mat[0][0];
+	assert(maxRow > 0);
 
-	for (int i = 0; i < maxRow; i++) {
-		for (int j = 0; j < MAX_COL; j++) {
+	double max = mat[0][0];
+	int i, j;
+
+	for ( i = 0; i < maxRow; i++) {
+		for ( j = 0; j < MAX_COL; j++) {
 			if (max < mat[i][j])
 				max = mat[i][j];
 		}
 	}
+	
+	assert(j == MAX_COL);
+	assert(i == maxRow);
 
 	return max;
 }
 
 /**
-* Find the smallest element in the matrix
-* @param mat The matrix to be checked
-* @param maxRow The number of rows in the matrix
-* @return Returns the smallest element in the matrix
+* Function <code>findMinElement</code> finds the smallest element in the matrix. Returns the smallest element in the matrix
+* 
+* @param mat		the matrix to be checked
+* @param maxRow		the number of rows in the matrix
+* @return			returns the smallest element in the matrix
 */
 double findMinElement(const double mat[][MAX_COL], const int maxRow){
+	assert(maxRow > 0);
+	
 	double min = mat[0][0];
+	int i, j;
 
-	for (int i = 0; i < maxRow; i++) {
-		for (int j = 0; j < MAX_COL; j++) {
+	for (i = 0; i < maxRow; i++) {
+		for (j = 0; j < MAX_COL; j++) {
 			if (min > mat[i][j])
 				min = mat[i][j];
 		}
 	}
 
+	assert(j == MAX_COL);
+	assert(i == maxRow);
+
 	return min;
 }
 /**
-* Check if the matrix is a square matrix
-* @param mat The matix checking
-* @param maxRow The number of rows in the matrix
-* @return Retuns true if the matrix is a square matrix
+* Function <code>isSquare</code> checks if the matrix is a square matrix
+* 
+* @param mat		the matix to be checked
+* @param maxRow		the number of rows in the matrix
+* @return			returns <code>true<\code> if the matrix is a squared matrix, <code>false<\code> false otherwise
 */
 bool isSquare(const double mat[][MAX_COL], const int maxRow) {
+	assert(maxRow > 0);
+	
 	bool postiive = false;
 
 	if (MAX_COL == maxRow)
