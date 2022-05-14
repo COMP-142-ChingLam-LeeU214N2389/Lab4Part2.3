@@ -17,12 +17,15 @@ namespace Lab4UnitTest
 			const double mat[maxRow][MAX_COL] = { 1,2,3,4,5,6 };
 			double total;
 			const int column = 0;
+
 		// Act
 			total=sumOfCol(mat,column,maxRow);
+
 		// Assert
 			Assert::AreEqual(9.0, total);
 
 		}
+
 		//Used to test sumOfRow
 		TEST_METHOD(TestMethod_SumOfRow)
 		{
@@ -31,11 +34,28 @@ namespace Lab4UnitTest
 			const double mat[maxRow][MAX_COL] = { 1,2,3,4,5,6 };
 			const int row = 0;
 			double total;
+
 			// Act
 			total = sumOfRow(mat, row, maxRow);
+
 			// Assert
 			Assert::AreEqual(3.0, total);
+		}
+		TEST_METHOD(TestMethod_SumOfRow)
+		{
+			// Arrange
+			const double mat[3][2] = { 1,2,3,4,5,6 };
+			const int maxRow = 3;
+			bool flag;
+
+			// Act
+			flag = isSquare(mat, maxRow);
+
+			// Assert
+
 
 		}
+		
+			
 	};
 }
