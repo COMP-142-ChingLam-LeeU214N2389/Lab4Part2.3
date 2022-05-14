@@ -13,16 +13,15 @@ namespace Lab4UnitTest
 
 		TEST_METHOD(TestMethod1)
 		{
+		// Arrange
 			const int maxRow = 3;
 			const double mat[maxRow][MAX_COL] = { 1,2,3,4,5,6 };
-		// Arrange
+			const int row = 0;
 			double total;
-			const int column = 0;
 		// Act
-			
-			total=sumOfCol(mat,column,maxRow);
+			total=sumOfRow(mat,row,maxRow);
 		// Assert
-			Assert::AreEqual(9.0, total);
+			Assert::AreEqual(3.0, total);
 
 		}
 	};
