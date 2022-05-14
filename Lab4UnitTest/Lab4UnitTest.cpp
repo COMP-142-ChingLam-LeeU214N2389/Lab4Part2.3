@@ -41,21 +41,20 @@ namespace Lab4UnitTest
 			// Assert
 			Assert::AreEqual(3.0, total);
 		}
-		TEST_METHOD(TestMethod_SumOfRow)
+		TEST_METHOD(TestMethod_FindMinElement)
 		{
 			// Arrange
-			const double mat[3][2] = { 1,2,3,4,5,6 };
+			const double mat[3][2] = { 1,2,3,4,5,6};
 			const int maxRow = 3;
-			bool flag;
+			double small;
 
 			// Act
-			flag = isSquare(mat, maxRow);
+			small = findMinElement(mat, maxRow);
+			//bool isSquare(const double mat[][MAX_COL], const int maxRow) {
+			//findMinElement(const double mat[][MAX_COL], const int maxRow){
 
 			// Assert
-
-
+			Assert::AreEqual(1.0,small);
 		}
-		
-			
 	};
 }
