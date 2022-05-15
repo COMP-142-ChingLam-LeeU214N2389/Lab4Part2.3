@@ -7,7 +7,7 @@
 
 #include <iostream> 
 #include <cstdlib>
-#include"Options.h"
+#include"Matrix.h"
 using namespace std;
 
 /**
@@ -39,17 +39,20 @@ int main() {
 
 		switch (choice) {
 		case 1:
-			cout << "\nWhich row are you looking for?";
-			cin >> row;
-			cout << "\nSum of row " << row << " is "
-				<< sumOfRow(matrix, row, MAX_ROW);
+			do {
+				cout << "\nWhich row are you looking for?";
+				cin >> row;
+				cout << "\nSum of row " << row << " is "
+					<< sumOfRow(matrix, row, MAX_ROW);
+			} while (row<0 || row>MAX_ROW);
 			break;
 		case 2:
-
-			cout << "\nWhich column are you looking for?";
-			cin >> column;
-			cout << "\nSum of column " << column << " is "
-				<< sumOfCol(matrix, column, MAX_ROW);
+			do {
+				cout << "\nWhich column are you looking for?";
+				cin >> column;
+				cout << "\nSum of column " << column << " is "
+					<< sumOfCol(matrix, column, MAX_ROW);
+			} while (column<0 || column>MAX_COL);
 			break;
 
 		case 3:

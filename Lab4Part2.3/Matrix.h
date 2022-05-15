@@ -4,11 +4,11 @@
 * \author Ching Lam Lee
 * \date 5/8/2022
 */
-#ifndef OPTIONS_H
-#define OPTIONS_H
+#ifndef MATRIX_H
+#define MATRIX_H
 
 //global constants 
-const int MAX_COL = 2;
+const int MAX_COL = 2;      
 
 //function prototypes
 double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow);
