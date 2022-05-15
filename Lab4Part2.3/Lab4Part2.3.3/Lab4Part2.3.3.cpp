@@ -12,11 +12,12 @@ namespace Lab4UnitTest
 		//Used to test sumOfCol
 		TEST_METHOD(TestMethod_SumOfCol)
 		{
-			// Arrange
 			const int maxRow = 3;
 			const double mat[maxRow][MAX_COL] = { 1,2,3,4,5,6 };
-			double total;
 			const int column = 0;
+			// Arrange
+			double total;
+			
 
 			// Act
 			total = sumOfCol(mat, column, maxRow);
@@ -29,10 +30,10 @@ namespace Lab4UnitTest
 		//Used to test sumOfRow
 		TEST_METHOD(TestMethod_SumOfRow)
 		{
-			// Arrange
 			const int maxRow = 3;
 			const double mat[maxRow][MAX_COL] = { 1,2,3,4,5,6 };
 			const int row = 0;
+			// Arrange
 			double total;
 
 			// Act
@@ -45,15 +46,13 @@ namespace Lab4UnitTest
 		//Used to test findMinElement
 		TEST_METHOD(TestMethod_FindMinElement)
 		{
-			// Arrange
 			const double mat[3][2] = { 1,2,3,4,5,6 };
 			const int maxRow = 3;
+			// Arrange
 			double small;
 
 			// Act
 			small = findMinElement(mat, maxRow);
-			//bool isSquare(const double mat[][MAX_COL], const int maxRow) {
-			//findMinElement(const double mat[][MAX_COL], const int maxRow){
 
 			// Assert
 			Assert::AreEqual(1.0, small);
