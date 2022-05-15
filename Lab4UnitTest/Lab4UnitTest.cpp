@@ -42,7 +42,7 @@ namespace Lab4UnitTest
 			Assert::AreEqual(3.0, total);
 		}
 		
-		Used to test findMinElement
+		//Used to test findMinElement
 		TEST_METHOD(TestMethod_FindMinElement)
 		{
 			// Arrange
